@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet name = "mainBackground.css"/> 
+    </h:head>
+    <h:body>
+        <div class="grid-container">
+            <div class="grid-item">
+                <img class="logo" src="https://images.fandango.com/redesign/areas/registration/img/theater-rewards-oj.svg"
+                     alt="logo"></img>
+            </div>
+            <div class="grid-item">
+                <h1 style="color: white; font-size: 60px">Find <span style="color: rgb(229, 147, 32)">Movies</span> Near You</h1>
+            </div>
+        </div>
+
+        <h3 class="sub-heading">Purchase Ticket For #{param['movietitle']} At #{param['showtime']} for $10</h3>
+        <h:form>
+            <h:panelGrid class="purchase-grid" columns="2">
+                <h:outputLabel class="purchase-output" value = "First Name: "></h:outputLabel>
+                <h:inputText required = 'true' class="purchase-input" label="First Name:"></h:inputText>
+
+                <h:outputLabel class="purchase-output" value = "Last Name: "></h:outputLabel>
+                <h:inputText required = 'true' class="purchase-input" label="Last Name:"></h:inputText>
+
+                <h:outputLabel class="purchase-output" value = "Credit Card Number: "></h:outputLabel>
+                <h:inputText class="purchase-input" label="Credit Card Number" id="creditnumber" value="#{purchaseTicketBean.creditnumber}">
+                    <f:convertNumber minFractionDigits="0"/>
+                    <f:validateLength minimum="16" maximum="16" />
+                </h:inputText>
+                <h:commandButton class="purchase-button" value="submit" action="SuccessPage">
+                    <f:param name="showtime" value="#{param['showtime']}"/>
+                    <f:param name="movietitle" value="#{param['movietitle']}"/>
+                </h:commandButton>
+
+
+
+            </h:panelGrid>
+        </h:form>
+    </h:body>
+</html>
+

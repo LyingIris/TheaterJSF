@@ -1,0 +1,185 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 26, 2018, 11:21:11 PM
+    Author     : sages
+*/
+
+
+body{
+    background-image:url(http://wall2born.com/data/out/766/image-44184583-movie-screen-wallpaper.jpg);
+
+}
+
+.theater-list{
+    color: white;
+    border: solid white;
+    border-radius: 10px;
+    font-size: 40px;
+    background: rgb(229, 147, 32);
+    padding: 10px;
+    margin: 20px;
+    margin-left: 30px;
+    margin-right: 30px
+}
+
+.zip-list{
+    padding: 0;
+    margin: 0;
+}
+
+.zip-link{
+    color: white;
+
+}
+
+.theater-link{
+    color: transparent;
+}
+.logo{
+    width: 200px;
+    height: 200px;
+}
+
+.grid-container{
+    display: grid;
+    grid-column-gap: 50px;
+    grid-template-columns: min-content max-content;
+}
+
+.list-grid-container{
+    display: grid;
+    grid-template-columns: min-content min-content;
+    margin: auto;
+    width: max-content;
+}
+
+.sub-heading{
+    margin: auto;
+    width: max-content;
+    font-size: 40px;
+    color: white;
+}
+
+.theater-info-list{
+    margin: auto;
+    margin-top: 50px;
+    border: white solid;
+    width: max-content;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    background: rgb(229, 147, 32);
+}
+
+.movie-table{
+    margin: auto;
+    width: max-content;
+}
+
+.movie-column{
+
+    width: 500px;
+    height: 700px;
+}
+
+.showtimes{
+    text-align: center;
+    width: 110px;
+    padding: 5px;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: white;
+    color: rgb(229, 147, 32);
+    border-radius: 10px;
+    border: white solid;
+    display: inline-block;
+    margin: 2px;
+    margin-bottom: 15px;
+}
+
+.movie-description{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    font-size: 18px
+}
+
+.buy-ticket{
+    text-align: center;
+    font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-weight: 700;
+    color: green;
+}
+
+.success-message{
+    margin: auto;
+    width: max-content;
+    
+    font-size: 35px;
+    color: white;
+    
+        
+}
+
+.return-main{
+
+    margin: auto;
+    width: max-content;
+    color: white;
+    border: solid white;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: rgb(229, 147, 32);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.purchase-grid{
+    margin: auto;
+    margin-top: 50px;
+    border: solid;
+    width: 900px;
+    padding: 30px;
+    border-radius: 20px;
+    border-color:white;
+    background-color: rgb(229, 147, 32);
+    
+}
+
+.purchase-output{
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+}
+
+.purchase-input{
+    width: 450px;
+    height: 30px;
+    font-size: 20px;
+    border-width: 6px;
+    border-radius: 8px;
+    border-color: yellow;
+}
+
+.purchase-button{
+    width: 100px;
+    height: 50px;
+    border-width: 6px;
+    border-radius: 8px;
+    border-color: white;
+    background-color: rgb(229, 147, 32);
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+.success-form{
+    margin: auto;
+    width: max-content;
+    
+}

@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet name = "mainBackground.css"/> 
+    </h:head>
+    <h:body>
+        <div class="grid-container">
+            <div class="grid-item">
+                <img class="logo" src="https://images.fandango.com/redesign/areas/registration/img/theater-rewards-oj.svg"
+                     alt="logo"></img>
+            </div>
+            <div class="grid-item">
+                <h1 style="color: white; font-size: 60px">Find <span style="color: rgb(229, 147, 32)">Movies</span> Near You</h1>
+            </div>
+        </div>
+        <c:forEach var="movieID" items ="#{showMovieBean.getTimeList(param['theatername'])}" varStatus ="loop">
+            <h:form>
+                <h:dataTable class="movie-table" value ="#{showMovieBean.getMovie(movieID)}" var="movie">
+                    <h:column class="movie-column">
+                        <div class="theater-info-list">
+                            <h:link outcome ="#{showMovieBean.showMovieDescription()}">
+                                <f:param name="movieData" value="#{movie.description}"/>
+                                <img src="#{movie.picurl}" width="400" height="600"></img> <br></br>
+                            </h:link>
+                            <div class="movie-description">Title: #{movie.movietitle}</div>
+                            <div class="movie-description">Genre: #{movie.genre}</div>
+                            <div class="movie-description">Playtime: #{movie.playtime}</div>
+                            <div class="buy-ticket">Purchase Ticket For Time-Slot: </div>
+                            <c:forEach var="showTime" items ="#{showMovieBean.getShowTime(param['theatername'], movieID)}" varStatus ="loop">
+                                <h:link outcome = "#{purchaseTicketBean.showPurchase()}">
+                                    <f:param name="showtime" value="#{showTime.showtime}"/>
+                                    <f:param name="movietitle" value="#{movie.movietitle}"/>
+                                    <div class="showtimes">#{showTime.showtime}</div> 
+                                </h:link>
+                            </c:forEach>
+                        </div>
+
+                    </h:column>
+                </h:dataTable>
+
+            </h:form>
+        </c:forEach>
+    </h:body>
+</html>
+

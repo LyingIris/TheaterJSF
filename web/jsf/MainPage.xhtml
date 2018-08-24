@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Find Theater by Zipcode</title>
+        <h:outputStylesheet name = "mainBackground.css"/> 
+    </h:head>
+    <h:body>
+        <div class="grid-container">
+            <div class="grid-item">
+                <img class="logo" src="https://images.fandango.com/redesign/areas/registration/img/theater-rewards-oj.svg"
+                     alt="logo"></img>
+            </div>
+            <div class="grid-item">
+                <h1 style="color: white; font-size: 60px">Find <span style="color: rgb(229, 147, 32)">Movies</span> Near You</h1>
+            </div>
+        </div>
+        <h:form>
+            <div class="sub-heading">
+                <h2>Select Zipcode</h2>
+            </div>
+            <div class="list-grid-container">
+                <ui:repeat class="zip-list" var="zipcode" value ="#{mainPageBean.zipcodeList}">
+                    <h3 class="theater-list">
+                        <h:commandLink class="zip-link" action ="#{showTheaterBean.showTheater(zipcode)}">
+                            #{zipcode}
+                        </h:commandLink>
+                    </h3>
+                </ui:repeat>
+            </div>
+        </h:form>
+    </h:body>
+</html>
+
